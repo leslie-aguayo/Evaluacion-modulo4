@@ -1,10 +1,9 @@
-
 package dominio;
 
 public class Servicio {
-    
-    private int idVehiculo;
+
     private int idServicio;
+    private String tipoServicio;
     private int precio;
 
     public Servicio() {
@@ -14,23 +13,15 @@ public class Servicio {
         this.idServicio = idServicio;
     }
 
-    public Servicio(int idVehiculo, int precio) {
-        this.idVehiculo = idVehiculo;
+    public Servicio(String tipoServicio, int precio) {
+        this.tipoServicio = tipoServicio;
         this.precio = precio;
     }
 
-    public Servicio(int idVehiculo, int idServicio, int precio) {
-        this.idVehiculo = idVehiculo;
+    public Servicio(int idServicio, String tipoServicio, int precio) {
         this.idServicio = idServicio;
+        this.tipoServicio = tipoServicio;
         this.precio = precio;
-    }
-
-    public int getIdVehiculo() {
-        return idVehiculo;
-    }
-
-    public void setIdVehiculo(int idVehiculo) {
-        this.idVehiculo = idVehiculo;
     }
 
     public int getIdServicio() {
@@ -39,6 +30,14 @@ public class Servicio {
 
     public void setIdServicio(int idServicio) {
         this.idServicio = idServicio;
+    }
+
+    public String getTipoServicio() {
+        return tipoServicio;
+    }
+
+    public void setTipoServicio(String tipoServicio) {
+        this.tipoServicio = tipoServicio;
     }
 
     public int getPrecio() {
@@ -51,10 +50,9 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return "Servicio{" + "idVehiculo=" + idVehiculo + ", idServicio=" + idServicio + ", precio=" + precio + '}';
+        return "Servicio{" + "idServicio=" + idServicio + ", tipoServicio=" + tipoServicio + ", precio=" + precio + '}';
     }
+
     
-    
-    
-    
+
 }

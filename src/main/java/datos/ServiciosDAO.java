@@ -38,10 +38,10 @@ public class ServiciosDAO {
 
             while (rs.next()) {
                 int idServicio = rs.getInt("id_servicio");
-                int idVehiculo = rs.getInt("id_vehiculo");
+                String tipoServicio = rs.getString("tipo_servicio");
                 int precio = rs.getInt("precio");
 
-                servicio = new Servicio(idServicio, idVehiculo, precio);
+                servicio = new Servicio(idServicio, tipoServicio, precio);
 
                 listadoServicios.add(servicio);
 
@@ -70,12 +70,12 @@ public class ServiciosDAO {
 
             rs.absolute(1);
 
-            int idVehiculo = rs.getInt("id_vehiculo");
             int idServicio = rs.getInt("id_servicio");
+            String tipoServicio = rs.getString("tipo_servicio");
             int precio = rs.getInt("precio");
 
-            servicio.setIdVehiculo(idVehiculo);
             servicio.setIdServicio(idServicio);
+            servicio.setTipoServicio(tipoServicio);
             servicio.setPrecio(precio);
 
         } catch (SQLException ex) {
@@ -98,8 +98,8 @@ public class ServiciosDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(INSERT);
-            stmt.setInt(1, servicio.getIdVehiculo());
-            stmt.setInt(2, servicio.getIdServicio());
+            stmt.setInt(1, servicio.getIdServicio());
+            stmt.setString(2, servicio.getTipoServicio() );
             stmt.setInt(3, servicio.getPrecio());
 
             row = stmt.executeUpdate();
@@ -122,8 +122,8 @@ public class ServiciosDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(UPDATE);
-            stmt.setInt(1, servicio.getIdVehiculo());
-            stmt.setInt(2, servicio.getIdServicio());
+            stmt.setInt(1, servicio.getIdServicio());
+            stmt.setString(2, servicio.getTipoServicio());
             stmt.setInt(3, servicio.getPrecio());
 
             row = stmt.executeUpdate();
