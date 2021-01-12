@@ -1,53 +1,37 @@
 package dominio;
 
-
 public class Vehiculo {
-    private int idCliente;
+
     private int idVehiculo;
     private String tipoVehiculo;
     private String marca;
     private String modelo;
     private int año;
-    private String revTecnica;
-    private String comuna;
-    
-    public Vehiculo(){
-        
+    private int revTecnica;
+
+    public Vehiculo() {
+
     }
 
     public Vehiculo(int idVehiculo) {
         this.idVehiculo = idVehiculo;
     }
 
-    public Vehiculo(int idCliente, String tipoVehiculo, String marca, String modelo, int año, String revTecnica, String comuna) {
-        this.idCliente = idCliente;
+    public Vehiculo(String tipoVehiculo, String marca, String modelo, int año, int revTecnica) {
         this.tipoVehiculo = tipoVehiculo;
         this.marca = marca;
         this.modelo = modelo;
         this.año = año;
         this.revTecnica = revTecnica;
-        this.comuna = comuna;
     }
-    
-    
 
-    public Vehiculo(int idCliente, int idVehiculo, String tipoVehiculo, String marca, String modelo, int año, String revTecnica) {
-        this.idCliente = idCliente;
+    public Vehiculo(int idVehiculo, String tipoVehiculo, String marca, String modelo, int año, int revTecnica) {
         this.idVehiculo = idVehiculo;
         this.tipoVehiculo = tipoVehiculo;
         this.marca = marca;
         this.modelo = modelo;
         this.año = año;
         this.revTecnica = revTecnica;
-        this.comuna = comuna;
-    }
-
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
     }
 
     public int getIdVehiculo() {
@@ -58,11 +42,11 @@ public class Vehiculo {
         this.idVehiculo = idVehiculo;
     }
 
-    public String getTipo_Vehiculo() {
+    public String getTipoVehiculo() {
         return tipoVehiculo;
     }
 
-    public void setTipo_Vehiculo(String tipoVehiculo) {
+    public void setTipoVehiculo(String tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
     }
 
@@ -90,28 +74,19 @@ public class Vehiculo {
         this.año = año;
     }
 
-    public String getRevTecnica() {
+    public int getRevTecnica() {
         return revTecnica;
     }
 
-    public void setRev_Tecnica(String revTecnica) {
+    public void setRevTecnica(int revTecnica) {
         this.revTecnica = revTecnica;
-    }
-
-    public String getComuna() {
-        return comuna;
-    }
-
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
     }
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "idCliente=" + idCliente + ", idVehiculo=" + idVehiculo + ", tipo_Vehiculo=" + tipoVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", año=" + año + ", rev_Tecnica=" + revTecnica + ", comuna=" + comuna + '}';
+        return "Vehiculo{" + "idVehiculo=" + idVehiculo + ", tipoVehiculo=" + tipoVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", a\u00f1o=" + año + ", revTecnica=" + revTecnica + '}';
     }
     
     
-}
 
-   
+}

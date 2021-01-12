@@ -38,16 +38,15 @@ public class VehiculosDAO {
             stmt = conn.prepareStatement(SELECT);
             rs = stmt.executeQuery();
 
-            while (rs.next()) {
-                int idCliente = rs.getInt("id_cliente");
+            while (rs.next()) {                
                 int idVehiculo = rs.getInt("id_vehiculo");
                 String tipoVehiculo = rs.getString("tipo_vehiculo");
                 String marca = rs.getString("marca");
                 String modelo = rs.getString("modelo");
                 int año = rs.getInt("año");
-                String revTecnica = rs.getString("rev_tecnica");
+                int revTecnica = rs.getInt("rev_tecnica");
 
-                vehiculo = new Vehiculo(idCliente, idVehiculo, tipoVehiculo, marca,
+                vehiculo = new Vehiculo(idVehiculo, tipoVehiculo, marca,
                         modelo, año, revTecnica);
 
                 listadoVehiculos.add(vehiculo);
@@ -78,20 +77,18 @@ public class VehiculosDAO {
             rs = stmt.executeQuery();
 
             rs.absolute(1);
-
-            int idCliente = rs.getInt("id_cliente");
+            
             String tipoVehiculo = rs.getString("tipo_vehiculo");
             String marca = rs.getString("marca");
             String modelo = rs.getString("modelo");
             int año = rs.getInt("año");
-            String revTecnica = rs.getString("rev_tecnica");
-            
-            vehiculo.setIdCliente(idCliente);
-            vehiculo.setTipo_Vehiculo(tipoVehiculo);
+            int revTecnica = rs.getInt("rev_tecnica");
+                        
+            vehiculo.setTipoVehiculo(tipoVehiculo);
             vehiculo.setMarca(marca);
             vehiculo.setModelo(modelo);
             vehiculo.setAño(año);
-            vehiculo.setRev_Tecnica(revTecnica);
+            vehiculo.setRevTecnica(revTecnica);
 
         } catch (SQLException ex) {
             System.out.println("Error: " + ex);
@@ -114,13 +111,12 @@ public class VehiculosDAO {
 
         try {
             conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(INSERT);
-            stmt.setInt(1, vehiculo.getIdCliente());
-            stmt.setString(2, vehiculo.getTipo_Vehiculo());
-            stmt.setString(3, vehiculo.getMarca());
-            stmt.setString(4, vehiculo.getModelo());
-            stmt.setInt(5, vehiculo.getAño());
-            stmt.setString(6, vehiculo.getRevTecnica());
+            stmt = conn.prepareStatement(INSERT);            
+            stmt.setString(1, vehiculo.getTipoVehiculo());
+            stmt.setString(2, vehiculo.getMarca());
+            stmt.setString(3, vehiculo.getModelo());
+            stmt.setInt(4, vehiculo.getAño());
+            stmt.setInt(5, vehiculo.getRevTecnica());
 
             row = stmt.executeUpdate();
 
@@ -141,13 +137,12 @@ public class VehiculosDAO {
 
         try {
             conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(UPDATE);
-            stmt.setInt(1, vehiculo.getIdCliente());
-            stmt.setString(2, vehiculo.getTipo_Vehiculo());
-            stmt.setString(3, vehiculo.getMarca());
-            stmt.setString(4, vehiculo.getModelo());
-            stmt.setInt(5, vehiculo.getAño());
-            stmt.setString(6, vehiculo.getRevTecnica());
+            stmt = conn.prepareStatement(UPDATE);            
+            stmt.setString(1, vehiculo.getTipoVehiculo());
+            stmt.setString(2, vehiculo.getMarca());
+            stmt.setString(3, vehiculo.getModelo());
+            stmt.setInt(4, vehiculo.getAño());
+            stmt.setInt(5, vehiculo.getRevTecnica());
 
             row = stmt.executeUpdate();
 
