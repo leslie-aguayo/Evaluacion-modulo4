@@ -4,7 +4,7 @@
             <div class="col-md-3">
                 <a href="#" class="btn btn-success btn-block" 
                    data-toggle="modal" data-target="#agregarClienteModal">
-                    <i class="fas fa-user-plus"></i> Agregar Cliente
+                    <i class="fas fa-user-plus"></i> Agregar XD
                 </a>
             </div>
         </div>

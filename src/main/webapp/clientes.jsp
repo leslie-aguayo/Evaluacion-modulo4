@@ -17,11 +17,15 @@
         <!-- Botones Navegacion -->
         <jsp:include page="/WEB-INF/comunes/botonesNav.jsp"/>
         
-        <!-- Listado Clientes -->
+        <!-- Agregar Clientes -->
+        <jsp:include page="/WEB-INF/cliente/agregarcliente.jsp"/>
+        
+        <!-- Agregar Clientes -->
         <jsp:include page="/WEB-INF/cliente/listadoClientes.jsp"/>
         
         <!-- footer -->
         <jsp:include page="/WEB-INF/comunes/footer.jsp"/>
+
            
 
         <!-- Scripts Funcional -->  
