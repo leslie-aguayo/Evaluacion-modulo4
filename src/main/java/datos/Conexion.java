@@ -6,9 +6,7 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 public class Conexion {
-    private static final String URL = "jdbc:mysql://localhost:3306"
-           + "/los_eren2021?useSSL=false&useTimezone=true"
-           + "&userTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/los_eren2021?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private static final String USER ="root";
     private static final String PASSWORD ="";
     

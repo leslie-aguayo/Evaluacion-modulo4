@@ -9,7 +9,7 @@
             </div>
 
 
-            <form method="post" id="formulario" action="${pageContext.request.contextPath}/Controlador?accion=insertar"
+            <form method="post" id="formulario" action="${pageContext.request.contextPath}/ClientesControlador?accion=insertar"
                   class="was-validated">
                 <div class="modal-body">
                     <div class="row justify-content-center align-item-center justify-content-md-start">
