@@ -19,16 +19,35 @@
                   class="was-validated">
                 <div class="modal-body" style="justify-content:center">
                     <br/>
-                  <div class="form-group">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Trabajador</label>
+
+                        <select id="trabajador" class="col-sm-8 col-form-label" style="color:#0B0B61;" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="2">Camilo Morales</option>
+                            <option value="3">Juan Perez</option>
+                            <option value="4">Andrés Salas</option>
+                            <option value="5">Mario Arredondo</option>
+                        </select>
+                        </br>
+
+                    </div>
+                    <div class="form-group">
                         <label for="servicio">Seleccione el Tipo de Servicio <em>(Precios Sin IVA)</em></label><br/>
                         <input type="checkbox" name="servicio" value="Lavado Exterior" id="exterior" onclick="valor()">&nbsp;Lavado Exterior $5000<br/>
                         <input type="checkbox" name="servicio" value="Lavado Interior" id="interior" onclick="valor()">&nbsp;Lavado Interior $3000<br/>
                         <input type="checkbox" name="servicio" value="Lavado de Motor" id="motor" onclick="valor()">&nbsp;Lavado de Motor   $12000<br/>
-                         <div class="row align-items-center justify-content-center mb-3">
-                            <label class="input-group-text"><h6>Total a pagar $</h6>&nbsp;<h6 name="totalServicio" id="resultado">0000</h6></label>
+                        <div class="row align-items-center justify-content-center mb-3">
+                            <label class="input-group-text"><h6>Total a pagar +IVA $</h6>&nbsp;<h6 name="totalServicio" id="resultado">0000</h6></label>
                         </div>
                     </div>
-                    
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit">Guardar</button>
+
                 </div>
             </form>
         </div>
