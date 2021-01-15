@@ -1,5 +1,5 @@
 #icono{
-    width: 15%;
+    width: 50%;
     float:right;
     justify-content: center; /*se alienean al centro horizontalmente*/
     align-items: center; /*alienean al centro verticalmente*/
@@ -58,7 +58,7 @@ section{
 }
 
 .badge{
-    font-size: 80%;
+    font-size: 50%;
     padding: 40px;
     margin: 0;
     background-attachment: fixed;
@@ -91,7 +91,3 @@ section{
     margin-left: 35px;
 }
 
-.modal-header{
-    align-items: center;
-    justify-content: center;
-}

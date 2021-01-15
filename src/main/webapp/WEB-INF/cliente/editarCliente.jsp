@@ -23,8 +23,8 @@
 
 
 
-            <div class="modal-body">
-                <div class="row justify-content-center align-item-center justify-content-md-start">
+            <div class="modal-body ">
+                <div class="row justify-content-center align-item-center">
                     <div class="col-md-6 card-deck">
                         <div class="card bg-white mb-3">
 

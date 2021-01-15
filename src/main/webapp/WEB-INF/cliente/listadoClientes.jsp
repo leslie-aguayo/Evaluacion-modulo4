@@ -2,10 +2,10 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="es_CL"/>
 
-<section id ="clientes">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
+<section id ="clientes" >
+    <div class="container ">
+        <div class="row justify-content-center align-item-center">
+            <div class="col-md-9 ">
                 <div class="card-header">
                     <h4>Listado de Clientes</h4>
                 </div>

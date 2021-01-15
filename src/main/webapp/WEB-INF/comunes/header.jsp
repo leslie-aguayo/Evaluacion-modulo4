@@ -10,11 +10,11 @@
 </head>
 
 <body id="principal">
-	<div id="container">
+	<div id="container" >
 		<header>
 
 			<div class="jumbotron jumbotron-fluid" style="background-image: url(./img/cars.jpg)">
-				<h1 style="text-align: center"><span class="badge badge-success" style="font-size: 100%"> Lavado de Autos <b><i>Los Eren</i></b></span></h1>
+				<h1 style="text-align: center"><span class="badge badge-success" style="font-size: 70%"> Lavado de Autos <b><i>Los Eren</i></b></span></h1>
 				
 
 			</div>
