@@ -16,6 +16,5 @@
 			<div class="jumbotron jumbotron-fluid" style="background-image: url(./img/cars.jpg)">
 				<h1 style="text-align: center"><span class="badge badge-success" style="font-size: 70%"> Lavado de Autos <b><i>Los Eren</i></b></span></h1>
 				
-
 			</div>
 		</header>
