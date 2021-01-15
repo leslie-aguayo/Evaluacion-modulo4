@@ -6,6 +6,11 @@
                     <i class="fas fa-user-plus"></i> Agregar Cliente
                 </a>
             </div>
+             <div class="col-md-3">
+                <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#agregarServicioModal">
+                    <i class="fas fa-user-plus"></i> Agregar Servicio
+                </a>
+            </div>
         </div>
     </div>
 </section>

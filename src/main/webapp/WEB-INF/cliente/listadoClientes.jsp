@@ -43,3 +43,4 @@
 </section>
 
 <jsp:include page="/WEB-INF/cliente/agregarcliente.jsp"/>
+<script src="funciones.js"></script>
