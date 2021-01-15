@@ -19,35 +19,16 @@
                   class="was-validated">
                 <div class="modal-body" style="justify-content:center">
                     <br/>
-                    <div class="form-group row filas">
-                        <label class="col-sm-4 col-form-label form-check-inline"> Seleccione Tipo de Lavado</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                   value="5000">
-                            <label class="form-check-label" for="inlineCheckbox1">Exterior <br /> $5.000.-
-                            </label>
+                  <div class="form-group">
+                        <label for="servicio">Seleccione el Tipo de Servicio <em>(Precios Sin IVA)</em></label><br/>
+                        <input type="checkbox" name="servicio" value="Lavado Exterior" id="exterior" onclick="valor()">&nbsp;Lavado Exterior $5000<br/>
+                        <input type="checkbox" name="servicio" value="Lavado Interior" id="interior" onclick="valor()">&nbsp;Lavado Interior $3000<br/>
+                        <input type="checkbox" name="servicio" value="Lavado de Motor" id="motor" onclick="valor()">&nbsp;Lavado de Motor   $12000<br/>
+                         <div class="row align-items-center justify-content-center mb-3">
+                            <label class="input-group-text"><h6>Total a pagar $</h6>&nbsp;<h6 name="totalServicio" id="resultado">0000</h6></label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
-                                   value="5000">
-                            <label class="form-check-label" for="inlineCheckbox3">Interior <br /> $3.000.- </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                   value="8000">
-                            <label class="form-check-label" for="inlineCheckbox2">Motor <br /> $12.000.- </label>
-                        </div>
-
-                     
-
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        &nbsp;
-
                     </div>
+                    
                 </div>
             </form>
         </div>

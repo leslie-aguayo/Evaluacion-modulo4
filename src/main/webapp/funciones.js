@@ -22,6 +22,45 @@ var form = document.getElementById("formulario");
 
 var error = document.getElementById("error");
 
+function valor(){
+	var exterior = document.getElementById("exterior");
+	var interior = document.getElementById("interior");
+        var motor = document.getElementById("motor");
+        var resultado = document.getElementById("resultado");
+        
+	var n1 = 5000;
+	var n2 = 3000;
+        var n3 = 12000;
+        
+	var total1 = n1 * 1.19;
+	var total2 = n2 * 1.19;
+        var total3 = n3 * 1.19;
+        
+	var suma;
+        
+	if(exterior.checked === true){
+            resultado.innerHTML = total1;
+	}if(interior.checked === true){
+            resultado.innerHTML = total2;
+	}if(motor.checked === true){
+            resultado.innerHTML = total3;
+        }if(interior.checked === true && exterior.checked === true){
+            suma = total1+total2;
+            resultado.innerHTML = suma;
+	}if(interior.checked === true && motor.checked === true){
+            suma = total2+total3;
+            resultado.innerHTML = suma;
+        }if(motor.checked === true && exterior.checked === true){
+            suma = total3 + total1;
+            resultado.innerHTML = suma;
+        }if(interior.checked === true && exterior.checked===true && motor.checked===true){
+            suma = total1+total2+total3;
+            resultado.innerHTML = suma;
+        }
+}
+
+
+
 
 function validarNombre() {
 	let esValido = false;
