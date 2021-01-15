@@ -1,5 +1,5 @@
 <head>
-	<link rel="shortcut icon" href="logo.ico?" type="image/x-icon" id="icono"/>
+	<link rel="shortcut icon" href="favicon.ico?" type="image/x-icon" id="icono"/>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-COMPATIBLE" content="ie-edge">
