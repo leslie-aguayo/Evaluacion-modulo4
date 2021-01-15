@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-3">
                 <a href=
-                   "${pageContext.request.contextPath}/Controlador?accion=eliminar&idCliente=${cliente.idCliente}"
+                   "${pageContext.request.contextPath}/ClientesControlador?accion=eliminar&idCliente=${cliente.idCliente}"
                    class="btn btn-danger btn-block">Eliminar Cliente</a>
             </div>
         </div>

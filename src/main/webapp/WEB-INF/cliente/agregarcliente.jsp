@@ -9,12 +9,12 @@
             </div>
 
 
-            <form method="post" id="formulario" action="${pageContext.request.contextPath}/ClientesControlador?accion=insertar"
+            <form method="post" id="formulario" action="${pageContext.request.contextPath}/ClientesControlador?accion=insertar&idCliente=${cliente.idCliente}"
                   class="was-validated">
-                <div class="modal-body">
+                <div class="modal-body" style="justify-content:center">
                     <div class="row justify-content-center align-item-center justify-content-md-start">
-                        <div class="col-md-6 card-deck">
-                            <div class="card bg-white mb-3">
+                        <div class="col-md-9">
+                            <div class="card bg-white mb-9">
 
                                 <div class="card-header text-center font-weight-bold lead" id="titulo" style="color:#0B0B61">
                                     <img src="./img/cars4.jpg" height="50px" class="icono">
@@ -27,7 +27,7 @@
 
                                     <div class="form-group row filas">
                                         <label class="col-sm-3 col-form-label">Run</label>
-                                        <input type="text" class="form-control col-sm-3" id="rut" oninput="validarRut(rut)" maxlength="10"
+                                        <input type="text" class="form-control col-sm-8" id="rut" oninput="validarRut(rut)" maxlength="10"
                                                placeholder="123456789" required />
                                     </div>
 

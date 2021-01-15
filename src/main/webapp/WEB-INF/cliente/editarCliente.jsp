@@ -92,10 +92,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="submit">Guardar</button>
-
-            </div>
+            
         </form>
 
         <jsp:include page="/WEB-INF/comunes/footer.jsp"/>
