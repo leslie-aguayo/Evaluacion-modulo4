@@ -62,8 +62,8 @@ public class ServiciosControlador extends HttpServlet {
         throws ServletException, IOException{
         
         int idServicio = Integer.parseInt(peticion.getParameter("idServicio")); 
-        String tipoServicio = peticion.getParameter("marca");
-        int precio = Integer.parseInt(peticion.getParameter("idServicio")); 
+        String tipoServicio = peticion.getParameter("tipoServicio");
+        int precio = Integer.parseInt(peticion.getParameter("precio")); 
                 
         //Cramos un objeto de tipo servicio (modelo)
         Servicio servicio = new Servicio(idServicio, tipoServicio, precio);
@@ -113,8 +113,8 @@ public class ServiciosControlador extends HttpServlet {
             throws ServletException, IOException { 
         
         int idServicio = Integer.parseInt(peticion.getParameter("idServicio")); 
-        String tipoServicio = peticion.getParameter("marca");
-        int precio = Integer.parseInt(peticion.getParameter("idServicio")); 
+        String tipoServicio = peticion.getParameter("tipoServicio");
+        int precio = Integer.parseInt(peticion.getParameter("precio")); 
                 
         //Cramos un objeto de tipo servicio (modelo)
         Servicio servicio = new Servicio(idServicio, tipoServicio, precio);

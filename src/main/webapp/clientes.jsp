@@ -24,6 +24,9 @@
         <!-- Agregar Clientes -->
         <jsp:include page="/WEB-INF/cliente/listadoClientes.jsp"/>
 
+        <jsp:include page="/WEB-INF/servicio/agregarServicio.jsp"/>
+
+
         <!-- footer -->
         <jsp:include page="/WEB-INF/comunes/footer.jsp"/>
 
