@@ -1,5 +1,5 @@
 <head>
-	<link rel="shortcut icon" href="./img/logo.jpg">
+	<link rel="shortcut icon" href="logo.ico?" type="image/x-icon" id="icono"/>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-COMPATIBLE" content="ie-edge">
@@ -13,7 +13,7 @@
 	<div id="container">
 		<header>
 
-			<div class="jumbotron jumbotron-fluid" style="background-image: url(./img/cars.jpg); background-repeat: space">
+			<div class="jumbotron jumbotron-fluid" style="background-image: url(./img/cars.jpg)">
 				<h1 style="text-align: center"><span class="badge badge-success" style="font-size: 100%"> Lavado de Autos <b><i>Los Eren</i></b></span></h1>
 				
 

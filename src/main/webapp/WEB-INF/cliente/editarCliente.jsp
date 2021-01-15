@@ -15,13 +15,13 @@
         <!-- Llamar al header -->
         <jsp:include page="/WEB-INF/comunes/header.jsp"/>
 
-        <form action="${pageContext.request.contextPath}/Controlador?accion=modificar&idCliente=${cliente.idCliente}"
+        <form action="${pageContext.request.contextPath}/ClientesControlador?accion=modificar&idCliente=${cliente.idCliente}"
               method="POST" class="was-validated">
 
             <!-- Botones de navegacion -Edicion -->
             <jsp:include page="/WEB-INF/comunes/botonNavEdicion.jsp"/>
-            
-            
+
+
 
             <div class="modal-body">
                 <div class="row justify-content-center align-item-center justify-content-md-start">
@@ -36,14 +36,16 @@
                             <div class="card-body">
 
 
-
+                                <div class="form-group row filas">
+                                    <label class="col-sm-3 col-form-label">Vehículo</label>
+                                    <input type="number" class="form-control col-sm-8" id="idVehiculo"
+                                           placeholder="Ingrese Id Vehículo" name="idVehiculo" value="${cliente.idVehiculo}" required />
+                                </div>
                                 <div class="form-group row filas">
                                     <label class="col-sm-3 col-form-label">Run</label>
                                     <input type="text" class="form-control col-sm-3" id="rut" oninput="validarRut(rut)" maxlength="10"
                                            placeholder="123456789" name="rut" value="${cliente.rut}"required />
                                 </div>
-                                
-                                                                           
 
                                 <div class="form-group row filas">
                                     <label class="col-sm-3 col-form-label">Nombre</label>
@@ -82,7 +84,7 @@
                                 <div class="form-group row filas">
                                     <label class="col-sm-3 col-form-label">Comuna</label>
                                     <input type="text" class="form-control col-sm-8" oninput="ingresarSoloLetras(this)" placeholder="Ingrese su Comuna"
-                                          name="comuna" value="${cliente.comuna}" required>
+                                           name="comuna" value="${cliente.comuna}" required>
                                 </div>
 
                                 <br/>		
@@ -92,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </form>
 
         <jsp:include page="/WEB-INF/comunes/footer.jsp"/>

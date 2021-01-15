@@ -1,85 +1,97 @@
-.icono{
-	width: 12%;
-	float:right;
-	justify-content: center; /*se alienean al centro horizontalmente*/
-	align-items: center; /*alienean al centro verticalmente*/
-	margin:auto;
-	color:#0B0B61;
+#icono{
+    width: 15%;
+    float:right;
+    justify-content: center; /*se alienean al centro horizontalmente*/
+    align-items: center; /*alienean al centro verticalmente*/
+    margin:auto;
+    color:#0B0B61;
 
 }
 
 
 #l1{
-	width: 10%;
-	float:right;
-	justify-content: center; /*se alienean al centro horizontalmente*/
-	align-items: center; /*alienean al centro verticalmente*/
-	margin:auto;
+    width: 10%;
+    float:right;
+    justify-content: center; /*se alienean al centro horizontalmente*/
+    align-items: center; /*alienean al centro verticalmente*/
+    margin:auto;
 }
 
 #revision{
-	align-items: center;
+    align-items: center;
 }
 
 #container{
-	font-family: sans-serif;
-	font-size-adjust: text-justify;
-	color:#0B0B61;
+    font-family: sans-serif;
+    font-size-adjust: text-justify;
+    color:#0B0B61;
 }
 
 #mensaje1{
-	margin-left: 25%;
+    margin-left: 25%;
 }
 
 #mensaje2{
-	margin-left: 25%;
+    margin-left: 25%;
 }
 
 #mensaje3{
-	margin-left: 25%;
+    margin-left: 25%;
 }
 
 #mensaje4{
-	margin-left: 25%;
+    margin-left: 25%;
 }
 
 #mensaje5{
-	margin-left: 25%;
+    margin-left: 25%;
 }
 
 section{
-	margin-left: 20px;
-	margin-right: 20px;	
+    margin-left: 20px;
+    margin-right: 20px;	
 }
 
 .jumbotron{
-	background-attachment: sticky;
-	background-repeat: space;
+    background-attachment: sticky;
+    background-repeat: repeat;
 }
 
 .badge{
-	font-size: 100%;
-	padding: 80px;
-	margin: 0;
-	background-attachment: fixed;
-	opacity: 0.9;
+    font-size: 80%;
+    padding: 40px;
+    margin: 0;
+    background-attachment: fixed;
+    opacity: 0.9;
 }
 
 
 #trabajo{
-font-size: 40px;
-font-family: garamond, serif;
+    font-size: 40px;
+    font-family: garamond, serif;
 }
 
 #titulo{
-font-size: 30px;
-font-family: garamond, serif;
+    font-size: 30px;
+    font-family: garamond, serif;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #year{
-	height: 45px;
+    height: 45px;
 }
 
 #error{
-margin-left: 25%;
+    margin-left: 25%;
+}
+
+.form-group{
+    margin-left: 35px;
+}
+
+.modal-header{
+    align-items: center;
+    justify-content: center;
 }

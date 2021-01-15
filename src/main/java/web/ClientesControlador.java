@@ -129,7 +129,6 @@ public class ClientesControlador extends HttpServlet {
     private void insertarCliente(HttpServletRequest peticion, HttpServletResponse respuesta)
             throws ServletException, IOException { 
         
-        int idCliente = Integer.parseInt(peticion.getParameter("idCliente"));
         int idVehiculo = Integer.parseInt(peticion.getParameter("idVehiculo"));
         String rut = peticion.getParameter("rut");
         String nombre = peticion.getParameter("nombre");
@@ -139,7 +138,7 @@ public class ClientesControlador extends HttpServlet {
         String comuna = peticion.getParameter("comuna");
         
         //Cramos un objeto de tipo cliente (modelo)
-        Cliente cliente = new Cliente(idCliente, idVehiculo, rut, nombre,apellido, fechaNac,direccion,comuna);
+        Cliente cliente = new Cliente(idVehiculo, rut, nombre,apellido, fechaNac,direccion,comuna);
         
         //insertar el objeto de cliente en la base de datos
         int registrosModificados = new ClientesDAO().insertar(cliente);
