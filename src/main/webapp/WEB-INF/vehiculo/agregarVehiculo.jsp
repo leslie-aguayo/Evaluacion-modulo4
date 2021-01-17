@@ -20,5 +20,5 @@
 
 <div class="form-group row filas">
     <label class="col-sm-3 col-form-label">Revisión técnica</label>
-    <input type="text" class="form-control col-sm-8" id="revTecnica" placeholder="Revisión técnica" name="revTecnica" required />
+    <input type="text" class="form-control col-sm-8" id="revTecnica" placeholder="Ingrese 0 si no está al día y 1 si está al día" name="revTecnica" required />
 </div>
