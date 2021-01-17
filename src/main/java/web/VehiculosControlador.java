@@ -3,7 +3,10 @@ package web;
 import datos.VehiculosDAO;
 import dominio.Vehiculo;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -115,8 +118,10 @@ public class VehiculosControlador extends HttpServlet {
     
     private void insertarVehiculo(HttpServletRequest peticion, HttpServletResponse respuesta)
             throws ServletException, IOException { 
+        HttpSession sesion = peticion.getSession();
         
-        int idVehiculo = Integer.parseInt(peticion.getParameter("idVehiculo")); 
+        sesion.setAttribute("idVehiculo", 0);
+        
         String tipoVehiculo = peticion.getParameter("tipoVehiculo"); 
         String marca = peticion.getParameter("marca"); 
         String modelo = peticion.getParameter("modelo");
@@ -125,13 +130,17 @@ public class VehiculosControlador extends HttpServlet {
                 
         
         //Cramos un objeto de tipo vehiculo (modelo)
-        Vehiculo vehiculo = new Vehiculo(idVehiculo,tipoVehiculo, marca, modelo, ano, revTecnica);
+        Vehiculo vehiculo = new Vehiculo(tipoVehiculo, marca, modelo, ano, revTecnica);
         
  
-        int registrosModificados = new VehiculosDAO().insertar(vehiculo);
-        System.out.println("Registros modificados = "+registrosModificados);
-        
-        this.accionDefault(peticion, respuesta);
+        int idVehiculo;
+        try {
+            idVehiculo = new VehiculosDAO().insertar(vehiculo);
+            sesion.setAttribute("idVehiculo", idVehiculo);
+            System.out.println("Id Vehiculo = "+idVehiculo);
+        } catch (SQLException ex) {
+            Logger.getLogger(VehiculosControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 }

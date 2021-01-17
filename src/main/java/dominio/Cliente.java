@@ -20,7 +20,7 @@ public class Cliente {
         this.idCliente = idCliente;
     }
 
-    public Cliente(int idVehiculo, String rut, String nombre, String apellido, String fechaNac, String direccion, String comuna) {
+    public Cliente(int idVehiculo,String rut, String nombre, String apellido, String fechaNac, String direccion, String comuna) {
         this.idVehiculo = idVehiculo;
         this.rut = rut;
         this.nombre = nombre;

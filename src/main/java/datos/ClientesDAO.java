@@ -14,7 +14,7 @@ public class ClientesDAO {
 
     private static final String SELECTBYID = "SELECT id_cliente,id_vehiculo,rut,nombre,apellido,fecha_nac,direccion,comuna FROM Clientes WHERE id_cliente=?";
 
-    private static final String INSERT = "INSERT INTO Clientes (id_vehiculo,rut,nombre,apellido,fecha_nac,direccion,comuna) VALUES (?,?,?,?,?,?,?)";
+    private static final String INSERT = "INSERT INTO Clientes (id_vehiculo, rut,nombre,apellido,fecha_nac,direccion,comuna) VALUES (?,?,?,?,?,?,?)";
 
     private static final String UPDATE = "UPDATE Clientes SET id_vehiculo=?,rut=?,nombre=?,apellido=?,fecha_nac=?,direccion=?,comuna=? WHERE id_cliente=?";
 

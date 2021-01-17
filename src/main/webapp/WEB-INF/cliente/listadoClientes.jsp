@@ -19,6 +19,7 @@
                             <th>Dirección</th>
                             <th>Comuna</th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <c:forEach var="cliente" items="${clientes}" varStatus="status">
@@ -29,8 +30,13 @@
                             <td>${cliente.direccion}</td>
                             <td>${cliente.comuna}</td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/ClientesControlador?accion=editar&idCliente=${cliente.idCliente}" class="btn btn-secondary">
+                                <a href="${pageContext.request.contextPath}/ClientesControlador?accion=editar&idCliente=${cliente.idCliente}" class="btn btn-primary">
                                     Editar
+                                </a>
+                            </td>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/ClientesControlador?accion=eliminar&idCliente=${cliente.idCliente}" class="btn btn-danger">
+                                    Eliminar
                                 </a>
                             </td>
                         </tr>

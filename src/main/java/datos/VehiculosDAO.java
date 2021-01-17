@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class VehiculosDAO {
             stmt = conn.prepareStatement(SELECT);
             rs = stmt.executeQuery();
 
-            while (rs.next()) {                
+            while (rs.next()) {
                 int idVehiculo = rs.getInt("id_vehiculo");
                 String tipoVehiculo = rs.getString("tipo_vehiculo");
                 String marca = rs.getString("marca");
@@ -77,13 +78,13 @@ public class VehiculosDAO {
             rs = stmt.executeQuery();
 
             rs.absolute(1);
-            
+
             String tipoVehiculo = rs.getString("tipo_vehiculo");
             String marca = rs.getString("marca");
             String modelo = rs.getString("modelo");
             int año = rs.getInt("año");
             int revTecnica = rs.getInt("rev_tecnica");
-                        
+
             vehiculo.setTipoVehiculo(tipoVehiculo);
             vehiculo.setMarca(marca);
             vehiculo.setModelo(modelo);
@@ -103,15 +104,16 @@ public class VehiculosDAO {
 
     }
 
-    public int insertar(Vehiculo vehiculo) {
+    public int insertar(Vehiculo vehiculo) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
 
         int row = 0;
-
+        String idVehiculo = "";
+        
         try {
             conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(INSERT);            
+            stmt = conn.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, vehiculo.getTipoVehiculo());
             stmt.setString(2, vehiculo.getMarca());
             stmt.setString(3, vehiculo.getModelo());
@@ -123,11 +125,18 @@ public class VehiculosDAO {
         } catch (SQLException ex) {
             System.out.println("Error; " + ex);
         } finally {
+            
+            if (row > 0) {
+                ResultSet rs = stmt.getGeneratedKeys();
+                if (rs.next()) {
+                    idVehiculo = rs.getString(1);
+                }
+            }
+
             Conexion.close(stmt);
             Conexion.close(conn);
         }
-        return row;
-
+        return idVehiculo.equals("") ? 0 : Integer.parseInt(idVehiculo);
     }
 
     public int actualizar(Vehiculo vehiculo) {
@@ -137,7 +146,7 @@ public class VehiculosDAO {
 
         try {
             conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(UPDATE);            
+            stmt = conn.prepareStatement(UPDATE);
             stmt.setString(1, vehiculo.getTipoVehiculo());
             stmt.setString(2, vehiculo.getMarca());
             stmt.setString(3, vehiculo.getModelo());

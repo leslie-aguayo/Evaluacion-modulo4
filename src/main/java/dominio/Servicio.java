@@ -12,7 +12,7 @@ public class Servicio {
     public Servicio(int idServicio) {
         this.idServicio = idServicio;
     }
-
+    
     public Servicio(String tipoServicio, int precio) {
         this.tipoServicio = tipoServicio;
         this.precio = precio;
@@ -52,7 +52,4 @@ public class Servicio {
     public String toString() {
         return "Servicio{" + "idServicio=" + idServicio + ", tipoServicio=" + tipoServicio + ", precio=" + precio + '}';
     }
-
-    
-
 }
