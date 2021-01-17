@@ -77,19 +77,20 @@ public class VehiculosDAO {
             stmt.setInt(1, vehiculo.getIdVehiculo());
             rs = stmt.executeQuery();
 
-            rs.absolute(1);
+            while (rs.next()) {
+                int idVehiculo = rs.getInt("id_vehiculo");
+                String tipoVehiculo = rs.getString("tipo_vehiculo");
+                String marca = rs.getString("marca");
+                String modelo = rs.getString("modelo");
+                int año = rs.getInt("año");
+                int revTecnica = rs.getInt("rev_tecnica");
 
-            String tipoVehiculo = rs.getString("tipo_vehiculo");
-            String marca = rs.getString("marca");
-            String modelo = rs.getString("modelo");
-            int año = rs.getInt("año");
-            int revTecnica = rs.getInt("rev_tecnica");
-
-            vehiculo.setTipoVehiculo(tipoVehiculo);
-            vehiculo.setMarca(marca);
-            vehiculo.setModelo(modelo);
-            vehiculo.setAño(año);
-            vehiculo.setRevTecnica(revTecnica);
+                vehiculo.setTipoVehiculo(tipoVehiculo);
+                vehiculo.setMarca(marca);
+                vehiculo.setModelo(modelo);
+                vehiculo.setAño(año);
+                vehiculo.setRevTecnica(revTecnica);
+            }
 
         } catch (SQLException ex) {
             System.out.println("Error: " + ex);
@@ -110,7 +111,7 @@ public class VehiculosDAO {
 
         int row = 0;
         String idVehiculo = "";
-        
+
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
@@ -125,7 +126,7 @@ public class VehiculosDAO {
         } catch (SQLException ex) {
             System.out.println("Error; " + ex);
         } finally {
-            
+
             if (row > 0) {
                 ResultSet rs = stmt.getGeneratedKeys();
                 if (rs.next()) {
@@ -152,6 +153,7 @@ public class VehiculosDAO {
             stmt.setString(3, vehiculo.getModelo());
             stmt.setInt(4, vehiculo.getAño());
             stmt.setInt(5, vehiculo.getRevTecnica());
+            stmt.setInt(6, vehiculo.getIdVehiculo());
 
             row = stmt.executeUpdate();
 

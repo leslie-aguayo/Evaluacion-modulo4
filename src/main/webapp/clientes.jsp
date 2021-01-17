@@ -18,7 +18,7 @@
         <!-- Botones Navegacion -->
         <jsp:include page="/WEB-INF/comunes/botonesNav.jsp"/>
 
-        <!-- Agregar Clientes -->
+        <!-- Agregar Clientes Modal -->
         <jsp:include page="/WEB-INF/cliente/agregarcliente.jsp"/>
 
         <!-- Agregar Clientes -->

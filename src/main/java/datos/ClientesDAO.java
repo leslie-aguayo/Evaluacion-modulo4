@@ -42,8 +42,7 @@ public class ClientesDAO {
                 String direccion = rs.getString("direccion");
                 String comuna = rs.getString("comuna");
 
-                cliente = new Cliente(idCliente, idVehiculo, rut, nombre, apellido, fechaNac,
-                        direccion, comuna);
+                cliente = new Cliente(idCliente, idVehiculo, rut, nombre, apellido, fechaNac, direccion, comuna);
 
                 listadoClientes.add(cliente);
 
@@ -71,23 +70,24 @@ public class ClientesDAO {
             stmt.setInt(1, cliente.getIdCliente());
             rs = stmt.executeQuery();
 
-            rs.absolute(1);
+            while (rs.next()) {
+                int idCliente = rs.getInt("id_cliente");
+                int idVehiculo = rs.getInt("id_vehiculo");
+                String rut = rs.getString("rut");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                String fechaNac = rs.getString("fecha_nac");
+                String direccion = rs.getString("direccion");
+                String comuna = rs.getString("comuna");
 
-            int idVehiculo = rs.getInt("id_vehiculo");
-            String rut = rs.getString("rut");
-            String nombre = rs.getString("nombre");
-            String apellido = rs.getString("apellido");
-            String fechaNac = rs.getString("fecha_nac");
-            String direccion = rs.getString("direccion");
-            String comuna = rs.getString("comuna");
-
-            cliente.setIdVehiculo(idVehiculo);
-            cliente.setRut(rut);
-            cliente.setNombre(nombre);
-            cliente.setApellido(apellido);
-            cliente.setFechaNac(fechaNac);
-            cliente.setDireccion(direccion);
-            cliente.setComuna(comuna);
+                cliente.setIdVehiculo(idVehiculo);
+                cliente.setRut(rut);
+                cliente.setNombre(nombre);
+                cliente.setApellido(apellido);
+                cliente.setFechaNac(fechaNac);
+                cliente.setDireccion(direccion);
+                cliente.setComuna(comuna);
+            }
 
         } catch (SQLException ex) {
             System.out.println("Error: " + ex);
@@ -144,6 +144,8 @@ public class ClientesDAO {
             stmt.setString(5, cliente.getFechaNac());
             stmt.setString(6, cliente.getDireccion());
             stmt.setString(7, cliente.getComuna());
+            stmt.setInt(8, cliente.getIdCliente());
+            
 
             row = stmt.executeUpdate();
 
@@ -155,24 +157,25 @@ public class ClientesDAO {
         }
         return row;
     }
-public int eliminar (Cliente cliente) {
+
+    public int eliminar(Cliente cliente) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int row = 0;
-        
-        try{
+
+        try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(DELETE);
             stmt.setInt(1, cliente.getIdCliente());
             row = stmt.executeUpdate();
-            
-        }catch(SQLException ex){
-            System.out.println("Error: "+ex);
-        }finally{
+
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex);
+        } finally {
             Conexion.close(stmt);
             Conexion.close(conn);
         }
         return row;
     }
-    
+
 }

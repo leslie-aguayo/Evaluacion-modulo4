@@ -11,6 +11,7 @@ import dominio.Vehiculo;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -48,11 +49,22 @@ public class ClientesControlador extends HttpServlet {
     private void editarCliente(HttpServletRequest peticion, HttpServletResponse respuesta)
         throws ServletException, IOException{
         //recuperar idcliente desde la vista de listadoClientes.jsp
+        HttpSession sesion = peticion.getSession();
         int idCliente = Integer.parseInt(peticion.getParameter("idCliente"));
         //el cliente se busca por medio del ID
         Cliente cliente = new ClientesDAO().encontrar(new Cliente(idCliente));
-        peticion.setAttribute("cliente",cliente);
+        
+        Vehiculo vehiculo = new Vehiculo();
+        vehiculo.setIdVehiculo(cliente.getIdVehiculo());
+        vehiculo = new VehiculosDAO().encontrar(vehiculo);
+        
+        sesion.setAttribute("cliente",cliente);
+        sesion.setAttribute("vehiculo", vehiculo);
+        System.out.println(cliente.toString());
+        System.out.println(vehiculo.toString());
+        
         String jspEditar = "/WEB-INF/cliente/editarCliente.jsp";
+        
         peticion.getRequestDispatcher(jspEditar).forward(peticion, respuesta);
        
     }
@@ -83,6 +95,16 @@ public class ClientesControlador extends HttpServlet {
         String fechaNac = peticion.getParameter("fechaNac");
         String direccion = peticion.getParameter("direccion");
         String comuna = peticion.getParameter("comuna");
+        
+        String tipoVehiculo = peticion.getParameter("tipoVehiculo");
+        String marca = peticion.getParameter("marca");
+        String modelo = peticion.getParameter("modelo");
+        int ano = Integer.parseInt(peticion.getParameter("ano"));
+        int revTecnica = Integer.parseInt(peticion.getParameter("revTecnica"));
+        
+        Vehiculo vehiculo = new Vehiculo(idVehiculo, tipoVehiculo, marca, modelo, ano, revTecnica);
+            
+        int modificaciones = new VehiculosDAO().actualizar(vehiculo);
         
          //crear el objeto del modelo cliente
          Cliente cliente = new Cliente(idCliente, idVehiculo, rut, nombre,apellido, fechaNac,direccion,comuna);

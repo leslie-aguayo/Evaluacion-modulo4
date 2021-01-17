@@ -34,13 +34,15 @@
                             </div>
 
                             <div class="card-body">
+                                
+                                
 
 
-                                <div class="form-group row filas">
+                                <!-- <div class="form-group row filas">
                                     <label class="col-sm-3 col-form-label">Vehículo</label>
                                     <input type="number" class="form-control col-sm-8" id="idVehiculo"
                                            placeholder="Ingrese Id Vehículo" name="idVehiculo" value="${cliente.idVehiculo}" required />
-                                </div>
+                                </div> -->
                                 <div class="form-group row filas">
                                     <label class="col-sm-3 col-form-label">Run</label>
                                     <input type="text" class="form-control col-sm-3" id="rut" oninput="validarRut(rut)" maxlength="10"
@@ -87,7 +89,7 @@
                                            name="comuna" value="${cliente.comuna}" required>
                                 </div>
 
-                                <br/>		
+                                <jsp:include page="/WEB-INF/vehiculo/editarVehiculo.jsp"/>	
 
                             </div>
                         </div>
